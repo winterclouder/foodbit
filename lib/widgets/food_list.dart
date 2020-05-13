@@ -1,5 +1,8 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:food_bit/model/food.dart';
+import 'package:food_bit/styles/theme.dart' as Style;
+
 
 class FoodList extends StatelessWidget {
     final foodItems = <Food>[
@@ -54,7 +57,60 @@ Widget _foodWidget(int index, Food food) {
                   image: DecorationImage(image: AssetImage(food.img),fit: BoxFit.cover)
                 ),
                 child: Row(),
-              )
+              ),
+              SizedBox(
+                    height: 10.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      food.title,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left:10.0, right: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(food.rating, style: TextStyle(
+                          fontSize: 9.0,
+                          color: Colors.black38
+                        ),),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Icon(EvaIcons.star, color: Style.Colors.mainColor, size: 8.0,),
+                        Icon(EvaIcons.star, color: Style.Colors.mainColor, size: 8.0,),
+                        Icon(EvaIcons.star, color: Style.Colors.mainColor, size: 8.0,),
+                        Icon(EvaIcons.star, color: Style.Colors.mainColor, size: 8.0,),
+                        Icon(EvaIcons.star, color: Colors.black38, size: 8.0,),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Text("(200)", style: TextStyle(
+                          fontSize: 9.0,
+                          color: Colors.black38
+                        ),),
+                      ],
+                    ),
+                    Text( "\$" + food.price, style: TextStyle(
+                      fontSize: 10.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold
+                    ),)
+                      ],
+                    ),
+                  )
             ],
           )
         ),

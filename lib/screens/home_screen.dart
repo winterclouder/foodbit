@@ -3,6 +3,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:food_bit/styles/theme.dart' as Style;
 import 'package:food_bit/widgets/food_list.dart';
+import 'package:food_bit/widgets/order_again.dart';
 import 'package:food_bit/widgets/top_menu.dart';
 
 
@@ -112,15 +113,15 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 275,
             child: FoodList(),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-          //   child: Text("Order Again", style: TextStyle(
-          //     fontSize: 20.0,
-          //     color: Style.Colors.titleColor
-          //   ),),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            child: Text("Order Again", style: TextStyle(
+              fontSize: 20.0,
+              color: Style.Colors.titleColor
+            ),),
 
-          // ),
-          // HomeHeader()
+          ),
+          OrderAgain()
           ],
         ),
       ),
